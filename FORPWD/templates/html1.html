@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PWD.org</title>
+</head>
+{% load static %}
+<body bgcolor="lightgreen">
+<div class="header" style="margin-right: 5%; float: right;">
+	<img src="{% static 'admin/img/images.jpeg' %}" style="width: 60px">
+	<img src="{% static 'admin/img/15.png' %}" style="width:60px">
+</div>	
+
+<h1 style=" margin-left: 50px; text-align: center; color: white;width: 200px; background-color: lightblue; padding: 10px; text-shadow: 2px 2px black;">SignUp</h1>
+
+
+<form class ="form" action="" method="post">
+    
+    
+</br>
+    <div class="m1" style=" margin-left:10% ">
+	    <input style=" text-align: center;" type="text" name="name" id="name" placeholder="Enter you name"><br><br>
+	    
+		    <select id="disability" name="disability" placeholder="Type of Disability">
+		    	<option selected disabled="">Type of Disability</option>
+		    	<option>Psychosocial Disability</option>
+		    	<option>Chronic Illness</option>
+		    	<option>Learning Disability</option>
+		    	<option>Mental Disability</option>
+		    	<option>Visual Disability</option>
+		    	<option>Orthopedic Disability</option>
+		    	<option>Communication Disability</option>
+		    </select><br>
+		    
+	   <br>
+	    
+	    <input style="text-align: center;" type="text" name="address" id="address" placeholder="Enter your address">
+	    <br><br>
+	    <input style="width: 150px; text-align: center;" type="text" name="age" id="age" placeholder="Age"><br><br>
+	    <input style="text-align: center;" type="text" name="Cnum" id="Cnum" placeholder="Contact number">
+	    <br><br>
+	   <input style="text-align: center;" type="text" name="email" id="email" placeholder="Enter your e-mail">
+	    <br><br>
+	    <input style=" text-align:center; height: 40px; width: 180px;" type ="date" name="date" id="date" placeholder="Enter the date today">
+	    <br><br>
+	    <input style=" text-align:center;  " type="submit" value="Submit" id="Submit">
+    </div>
+    {% csrf_token %}
+</form>
+
+
+</body>
+</html>
