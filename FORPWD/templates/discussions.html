@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>discussions</title>
+	<link rel="stylesheet" type="text/css" href="./src/discuss.css">
+</head>
+<body onload="get()">
+	
+	 <div class="topnav">
+            
+            <a href="homepage.html" style="margin-left: 20px;">Home</a>              
+            <a href="discussions.html">Discussion</a>     
+            <a href="aboutus.html">About</a>             
+            <a href="shop.html">Market</a>
+    </div>
+            <input type="button" class="logoutButton" name="logoutButton" value="Logout" onclick="myFunction()"/>
+
+
+    <hr>
+  	<img class="sideqoute" src="./src/disdisability.png">
+  	<div class="box">
+	    <div class="discussion-box">
+	    <p id="savedText" class="savedText"></p>
+	    <p id="openedText"></p>
+	    </div><br>
+	    <div class="reply-box">
+	    <p id="saved-reply" class="saved-reply"></p>
+	    <p id="opened-Text"></p>
+	    </div><br>
+	</div>
+	<div>
+	<input type="text" class="input" id="input" name=""/><br>
+	<button onclick="save()" class="button">Post</button>
+	</div>
+	<div>
+	<input type="text" class="reply-input" id="reply-input" name=""/><br>
+	<button onclick="reply()" class="button2">reply</button>
+	</div>
+
+</body>
+
+<script>
+function myFunction(){
+		window.location.href="login.html";
+}
+
+var storedItem = localStorage.getItem("storedItem");
+var reply = localStorage.getreply("reply");
+
+function save(){
+	var Item = document.getElementById("input").value;
+	localStorage.setItem("storedItem", Item);
+	document.getElementById("savedText").innerHTML = Item;
+}
+
+function get(){
+	localStorage.getItem("storedItem");
+	document.getElementById("openedText").innerHTML = storedItem;
+}
+
+function clear(inputElement){
+	inputElement.classList.remove("savedText");
+
+function reply(){
+	var reply = document.getElementById("reply-input").value;
+	localStorage.setreply("reply", reply);
+	document.getElementById("saved-reply").innerHTML = reply;
+}
+
+function get(){
+	localStorage.getItem("reply");
+	document.getElementById("opened-Text").innerHTML = reply;
+}
+}
+</script>
+</html>
