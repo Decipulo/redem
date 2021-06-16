@@ -1,11 +1,25 @@
 from django.shortcuts import render, redirect
 from .models import Applicant
-from django.utils.datastructures import MultiValueDictKeyError
+
 # Create your views here.
-def Regpage(request):
+def loginpage(request):
 
-	return render(request,'html1.html')
+	return render(request,'login.html')
 
-def pendinglist(request):
-	dem = Applicant.objects.all().order_by('date')
-	return render(request,'html2.html', {'dem': dem})
+def homepage(request):
+
+	 return render (request, 'homepage.html')
+
+def discussion(request):
+
+    return render (request, 'discussions.html')
+
+def logout(request):
+
+    return render (request, 'login.html')
+
+def aboutuspage(request):
+    return render (request, 'aboutus.html')
+
+def Market(request):
+    return render (request, 'shop.html')

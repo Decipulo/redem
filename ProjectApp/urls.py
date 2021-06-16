@@ -20,7 +20,11 @@ from FORPWD import views
 
 urlpatterns = [
     path('admin/',admin.site.urls),
-    path('', views.Regpage, name="first"),
-    path('list/',views.pendinglist, name='list/'),
-	
+    path('', views.loginpage, name="first"),
+    path('home/',views.homepage, name='home/'),
+    path('discussion/',views.discussion, name='discussion/'),
+    path('login/' ,views.logout, name='login/'),
+    path('about/' ,views.aboutuspage, name='about/'),
+    path('shop/' ,views.Market, name='shop/'),
+
 ]
