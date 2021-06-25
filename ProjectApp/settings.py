@@ -26,7 +26,7 @@ SECRET_KEY = 'e(dn=$5l7x+(l#4*x1v)!+2$bm6r1-$8(h_#@k798oefnb55@9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['pwd.org']
+ALLOWED_HOSTS = []
 
 
 

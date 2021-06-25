@@ -1,61 +1,52 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Pwd.org</title>
-    <link rel="stylesheet" type="text/css" href="./src/css.css">
-</head>
 
+<html>
+
+<head>
+    {% load static %}
+    <title>Pwd.org</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/admin/css/css.css' %}">
+</head>
 <body>
-	<header>
-        
+
+    <header>
+
 
         <div class="topnav">
-            
-            <a href="homepage.html">Home</a>              
-            <a href="discussions.html">Discussion</a>     
-            <a href="aboutus.html">About</a>             
-            <a href="shop.html">Market</a>
-           
+
+            <a href="/home">Home</a>
+            <a href="/discussion">Discussion</a>
+            <a href="/about">About</a>
+            <a href="/shop">Market</a>
+
         </div>
          <input type="button" class="logoutButton" name="logoutButton" value="Logout" onclick="myFunction()"/>
     </header>
     <hr>
+    <h3>Set up personal info</h3>
 
-        <div class="logo">` 
-             <img src="./src/PWD_COVER.jpg" alt="PWD_COVER">   
+        <div class="logo">`
+             <img src="{% static '/admin/img/PWD_COVER.jpg' %}" alt="PWD_COVER">
         </div>
-    
-    <div class="container">
-        <p>Setup your personal information</p>
-        <input type="text" name="fullname" placeholder="Enter Your fullname"/>
-        <input type="text" name="adddress" placeholder="Address" />
-        <select id="disability" name="disability" placeholder="Type of Disability">
-                <option selected disabled="">Type of Disability</option>
-                <option>Psychosocial Disability</option>
-                <option>Chronic Illness</option>
-                <option>Learning Disability</option>
-                <option>Mental Disability</option>
-                <option>Visual Disability</option>
-                <option>Orthopedic Disability</option>
-                <option>Communication Disability</option>
-        </select><br>
-        <input type="text" name="age" placeholder="Age"/>
-        <input type="text" name="mobileNumber" placeholder="Contact number"/>
-        <input type="file" name=""></input>
-        <p style="font-size: 12px;">Insert photo </p>
-        <br>
-        <input type="submit" name="submit" value="submit" />
 
-    </div>
-    <input type="button" class="logoutButton" name="logoutButton"/>
-        
-        
-    
-    
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <input type="submit" value="Submit"/>
+
+
+    </form>
+
+
+
+
 </body>
 <script>
 function myFunction(){
-        window.location.href="login.html";
+        window.location.href="/login";
 }
 </script>
 </html>
