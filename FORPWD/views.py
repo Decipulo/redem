@@ -76,7 +76,7 @@ def index(request):
     return render(request, 'base/index.html', context)
 
 def create(request):
-    donators = Donation(Fullname=request.POST['firstname'], donate=request.POST['lastname'])
+    donators = Donation(Fullname=request.POST['Fullname'], donate=request.POST['donate'])
     donators.save()
     return redirect('/about')
 
@@ -87,8 +87,8 @@ def edit(request, id):
 
 def update(request, id):
     donators = Donation.objects.get(id=id)
-    donators.Fullname = request.POST['firstname']
-    donators.donate = request.POST['lastname']
+    donators.Fullname = request.POST['Fullname']
+    donators.donate = request.POST['donate']
     donators.save()
     return redirect('/about')
 
