@@ -90,19 +90,19 @@ class ProductItem(models.Model):
     def __str__(self):
         return self.itemname
 
-class Member(models.Model):
-    firstname = models.CharField(max_length=40)
-    lastname = models.CharField(max_length=40)
+class Donation(models.Model):
+    Fullname = models.CharField(max_length=40)
+    donate = models.CharField(max_length=40)
 
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.firstname + " " + self.lastname
+        return self.Fullname + " " + self.donate
 
     class Meta:
         ordering = ['created']
 
     class Meta:
-        db_table = "blog_member"
+        db_table = "db_donator"
 
 
