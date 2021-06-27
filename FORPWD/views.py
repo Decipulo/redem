@@ -71,30 +71,30 @@ def CompleteProfile(request):
 	return render(request, 'base/applicantform.html', context)
 
 def index(request):
-    members = Member.objects.all()
-    context = {'members': members}
+    donators = Donation.objects.all()
+    context = {'donators': donators}
     return render(request, 'base/index.html', context)
 
 def create(request):
-    member = Member(firstname=request.POST['firstname'], lastname=request.POST['lastname'])
-    member.save()
+    donators = Donation(Fullname=request.POST['firstname'], donate=request.POST['lastname'])
+    donators.save()
     return redirect('/about')
 
 def edit(request, id):
-    members = Member.objects.get(id=id)
-    context = {'members': members}
+    donators = Donation.objects.get(id=id)
+    context = {'donators': donators}
     return render(request, 'base/edit.html', context)
 
 def update(request, id):
-    member = Member.objects.get(id=id)
-    member.firstname = request.POST['firstname']
-    member.lastname = request.POST['lastname']
-    member.save()
+    donators = Donation.objects.get(id=id)
+    donators.Fullname = request.POST['firstname']
+    donators.donate = request.POST['lastname']
+    donators.save()
     return redirect('/about')
 
 def delete(request, id):
-    member = Member.objects.get(id=id)
-    member.delete()
+    donators = Donation.objects.get(id=id)
+    donators.delete()
     return redirect('/about')
 
 
