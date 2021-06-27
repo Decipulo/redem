@@ -30,9 +30,9 @@ equal rights in every individual. peace, love and acceptance to our disability c
     {% csrf_token %}
     <div class="form-group">
         <label for="firstname">Fullname</label>
-        <input type="text" name="firstname" class="form-control" style="width:30%;" required="required"/>&nbsp;&nbsp;
+        <input type="text" name="Fullname" class="form-control" style="width:30%;" required="required"/>&nbsp;&nbsp;
         <label for="lastname">Donation</label>
-        <input type="text" name="lastname" class="form-control" style="width:15%;" required="required"/>
+        <input type="text" name="donate" class="form-control" style="width:15%;" required="required"/>
         <button type="submit" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-plus"></span> Donate</button>
     </div>
 </form>
@@ -46,11 +46,11 @@ equal rights in every individual. peace, love and acceptance to our disability c
         </tr>
     </thead>
     <tbody>
-        {% for member in members %}
+        {% for donators in donators %}
         <tr>
-            <td>{{ member.firstname }}</td>
-            <td>{{ member.lastname }}</td>
-            <td><center><a class="btn btn-sm btn-warning" href="edit/{{ member.id }}"><span class="glyphicon glyphicon-edit"></span> Edit</a>&nbsp;&nbsp; <a class="btn btn-sm btn-danger" href="delete/{{ member.id }}"><span class="glyphicon glyphicon-trash"></span> Delete</a></center></td>
+            <td>{{ donators.Fullname }}</td>
+            <td>{{ donators.donate }}</td>
+            <td><center><a class="warning" href="edit/{{ donators.id }}"><span class="edit"></span> Edit</a>&nbsp;&nbsp; <a class="btn-danger" href="delete/{{ donators.id }}"><span class="trash"></span> Delete</a></center></td>
         </tr>
         {% endfor %}
     </tbody>
