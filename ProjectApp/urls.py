@@ -16,17 +16,27 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from FORPWD import views
+from django.conf.urls import url
 
 
 urlpatterns = [
 
     path('admin/',admin.site.urls),
+    path('homes/',views.home, name="homes/"),
     path('', views.loginpage, name="first"),
+    path('login/loginpage', views.loginpage, name="login/"),
+    path('respondent/<str:pk_test>/', views.respondent, name="respondent"),
+    path('create_respondent/', views.CompleteProfile, name="create_respondent"),
     path('home/',views.homepage, name='home/'),
     path('discussion/',views.discussion, name='discussion/'),
     path('login/' ,views.logout, name='login/'),
-    path('about/' ,views.aboutuspage, name='about/'),
+    
     path('shop/' ,views.Market, name='shop/'),
-    path('myaccount/', views.Account, name = 'myaccount'),
+    path('myaccount/' ,views.myaccount, name = 'myaccount/'),
+    path('about/',views.index, name='about/'),
+    url(r'^about/create$', views.create, name='create'),
+    url(r'^about/edit/(?P<id>\d+)$', views.edit, name='edit'),
+    url(r'^about/edit/update/(?P<id>\d+)$', views.update, name='update'),
+    url(r'^about/delete/(?P<id>\d+)$', views.delete, name='delete'),
 
 ]
