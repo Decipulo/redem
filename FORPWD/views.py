@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import login, Account, Applicant, Member
+from .models import login, Account, Applicant, Donation
 from .forms import ApplicantForm, LoginForm
 
 # Create your views here.
